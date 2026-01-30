@@ -1,0 +1,17 @@
+../Core/Src/Net.c:27:6:W5500_select	1
+../Core/Src/Net.c:34:6:W5500_deselect	1
+../Core/Src/Net.c:41:6:W5500_reset	1
+../Core/Src/Net.c:51:6:W5500_ReadBuff	1
+../Core/Src/Net.c:58:6:W5500_WriteBuff	1
+../Core/Src/Net.c:65:6:W5500_WriteByte	1
+../Core/Src/Net.c:72:9:W5500_ReadByte	1
+../Core/Src/Net.c:81:9:net_init	12
+../Core/Src/Net.c:142:9:net_tcp_serv_open	6
+../Core/Src/Net.c:176:9:net_tcp_serv_waiting_connection	5
+../Core/Src/Net.c:210:9:net_tcp_serv_rx	4
+../Core/Src/Net.c:239:9:net_tcp_serv_tx	1
+../Core/Src/Net.c:257:9:net_tcp_serv_close	2
+../Core/Src/Net.c:273:9:net_udp_open	6
+../Core/Src/Net.c:297:9:net_udp_rx	3
+../Core/Src/Net.c:330:9:net_udp_tx	4
+../Core/Src/Net.c:357:9:net_udp_close	2

@@ -1,0 +1,6 @@
+../Core/Src/ring_buff.c:10:20:init_ring_buff	32	static
+../Core/Src/ring_buff.c:27:20:put_byte_to_buff	24	static
+../Core/Src/ring_buff.c:42:20:get_byte_to_buff	24	static
+../Core/Src/ring_buff.c:61:20:init_universal_ring_buff	32	static
+../Core/Src/ring_buff.c:74:20:put_element_to_buff	32	static
+../Core/Src/ring_buff.c:93:20:get_element_to_buff	32	static

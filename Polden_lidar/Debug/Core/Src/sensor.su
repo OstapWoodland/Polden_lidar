@@ -1,0 +1,9 @@
+../Core/Src/sensor.c:18:20:get_ccr_pointer	16	static
+../Core/Src/sensor.c:29:10:get_triggered_channel	24	static
+../Core/Src/sensor.c:43:26:ultrasonic_state_mashine	16	static
+../Core/Src/sensor.c:125:6:ultrasonic_callback	32	static
+../Core/Src/sensor.c:148:13:ultrasonic_trig	16	static
+../Core/Src/sensor.c:156:13:ultrasonic_start_capture_echo	16	static
+../Core/Src/sensor.c:162:13:ultrasonic_stop_capture_echo	16	static
+../Core/Src/sensor.c:168:17:ultrasonic_calc_distance	24	static
+../Core/Src/sensor.c:174:15:ultrasonic_check_timeout	24	static
