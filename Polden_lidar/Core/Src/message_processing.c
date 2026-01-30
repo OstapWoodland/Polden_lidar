@@ -47,9 +47,11 @@ message_processing_error_t processing_message(message_processing_t *message_proc
 			}
 			else
 			{
+				message_processing->__flag_socket_opened = 0;
 				message_processing->__flag_net_init = 0;
 				net_udp_close(message_processing->socket);
 				message_processing->stage = NET_W5500_INIT;
+				message_processing->__flag_sender = SENDING_STOP;
 			}
 
 			break;
