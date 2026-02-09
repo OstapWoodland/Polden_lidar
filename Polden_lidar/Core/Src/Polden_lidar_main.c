@@ -55,7 +55,7 @@ void polden_lidar_main()
 
 	while(1)
 	{
-		for(int i = 0; i < SENSORS_COUNT; i++)
+/*		for(int i = 0; i < SENSORS_COUNT; i++)
 		{
 			if(ultrasonic_state_mashine(&sensors[i]) == DONE) put_element_to_buff(&ring_buff[i], (uint8_t*)(&(sensors[i].distance_mm)));
 			if(ring_buff[i].ring_buff_u8t.current_size_buff)
@@ -69,7 +69,36 @@ void polden_lidar_main()
 
 			}
 
+		}	*/
+
+		static uint8_t sensor_count = 0;
+		//TIMEOUT_MEASURE
+		stages_distance_sensor_t curr_state_sensor = ultrasonic_state_mashine(&sensors[sensor_count]);
+		if(curr_state_sensor == DONE)
+		{
+			put_element_to_buff(&ring_buff[sensor_count], (uint8_t*)(&(sensors[sensor_count].distance_mm)));
+
+			if(ring_buff[sensor_count].ring_buff_u8t.current_size_buff)
+			{
+				uint32_t distance_to_send = 0;
+				if(get_element_to_buff(&ring_buff[sensor_count], (uint8_t*)(&distance_to_send)) == BUFF_OK)
+				{
+					uint8_t *dst = talcker.last_msg_struct_output.payload + (sensor_count * SIZE_ELEMENT_BUFF);
+					memcpy(dst, &distance_to_send, SIZE_ELEMENT_BUFF);
+				}
+
+			}
+
+			sensor_count++;
+			if(sensor_count >= SENSORS_COUNT) sensor_count = 0;
 		}
+		else if (curr_state_sensor == TIMEOUT_MEASURE)
+		{
+			sensor_count++;
+			if(sensor_count >= SENSORS_COUNT) sensor_count = 0;
+		}
+
+
 
 
 		//if(get_ticks_mks() - tmr_check_talker > 1000)
